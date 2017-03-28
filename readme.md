@@ -1,6 +1,6 @@
 # Getting to grips with data
 
-ODM workshop on exploring and visualising data using examples from Grant Nav.
+ODM workshop on exploring and visualising data using examples from [GrantNav](http://grantnav.threesixtygiving.org/), a [360Giving](http://www.threesixtygiving.org/) application released under the terms of the [Creative Commons Attribution Sharealike License (CC-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/). See GrantNav's [copyright and attribution](http://grantnav.threesixtygiving.org/datasets/#copyright) list for details on the original data sources.
 
 ## Install R and RStudio
 
@@ -21,8 +21,9 @@ Linux users:
 - [R binary packages](https://cran.r-project.org/bin/linux/) or search your package manager (e.g. `r-base` in ubuntu)
 - [RStudio binaries](https://www.rstudio.com/products/rstudio/download/)
 
-## Download the data, and a script
+## Download the GrantNav data, and an R script
 
-- Download the [Grant-Nav 10,000 award sample](grantnav-10ksample.csv) file
-- Download and open the [R script for the workshop](grant-explore.r) in RStudio
+- Download the [GrantNav 10,000 award sample](grantnav-10ksample.csv) file and the [R script for the workshop](grant-explore.r). You can get both in a zip archive on the [releases page](https://github.com/Robsteranium/g2gwd/releases).
+- Open the `grant-explore.r` script in RStudio
 - You'll need to set the working directory (see the `setwd` command) to the folder where you downloaded the csv
+
