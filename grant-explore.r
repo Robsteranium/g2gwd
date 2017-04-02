@@ -3,7 +3,7 @@
 #===========================
 
 # Set the working directory
-setwd("/home/rueb/code/odm/data")
+setwd("/home/rueb/code/odm/repo")
 
 # Read the Grant Nav csv data
 gn <- read.csv("grantnav-10ksample.csv") # load the csv into a data frame (spreadsheet)
@@ -88,8 +88,7 @@ library(ggplot2)
 # e.g. ggplot(data, aes(x,y)) + geom_point
 
 #=== Basics of ggplot ===
-
-df <- data.frame(a=10,b=10) # basic example data frame: 1 row, 2 columns
+df <- data.frame(a=10,b=12) # basic example data frame: 1 row, 2 columns
 ggplot(df, aes(x=a, y=b)) + geom_point() # map variable a to the x axis, b to y, and render a point 
 
 runif(10) # 10 random numbers (uniformly distributed between 0 and 1) 
@@ -115,7 +114,7 @@ ggplot(gn, aes(Amount.Awarded.Month, Amount.Awarded)) + stat_summary() + scale_y
 ggplot(gn, aes(Amount.Awarded.Month, Amount.Awarded)) + stat_summary(aes(colour=Funding.Org.Name)) + scale_y_log10()
 
 # Extract only the top few funders to simplify the chart
-large_funders <- gn[,.(awards=.N),Funding.Org.Name][awards>100]$Funding.Org.Name
+large_funders <- gn[,.(awards=.N),Funding.Org.Name][order(-awards)][1:8]$Funding.Org.Name
 ggplot(gn[Funding.Org.Name %in% large_funders], aes(Amount.Awarded.Month, Amount.Awarded)) + stat_summary(aes(colour=Funding.Org.Name)) + scale_y_log10()
 
 
@@ -137,7 +136,7 @@ library(scales)
 gbp = dollar_format(prefix="£")
 ggplot(gn[Funding.Org.Name %in% large_funders], aes(Amount.Awarded, colour=Funding.Org.Name)) +
   stat_ecdf() +
-  scale_x_log10(name="Award Amount", labels=gbp, breaks=c(1,100,1000,10000,10^5,10^6,10^7)) +
+  scale_x_log10(name="Award Amount", labels=gbp, limits=c(500,10^6), breaks=c(500, 1000, 5000, 10000, 10^5, 10^6)) +
   scale_y_continuous(name="Proportion of Awards at this amount or lower", labels=percent) +
-  theme_minimal() +
-  labs(colour="Funding Organisation", title="Distribution of award amounts by funder")
+  theme_minimal() + theme(legend.position="bottom") +
+  labs(colour="Funding Organisation", title="Distribution of Amounts Awarded by Funder")

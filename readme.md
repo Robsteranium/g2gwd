@@ -1,5 +1,7 @@
 # Getting to grips with data
 
+![Distribution of Grants by Value](./award-distribution.png "Cumulative Total Grants by Value and Distributor")
+
 ODM workshop on exploring and visualising data using examples from [GrantNav](http://grantnav.threesixtygiving.org/), a [360Giving](http://www.threesixtygiving.org/) application released under the terms of the [Creative Commons Attribution Sharealike License (CC-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/). See GrantNav's [copyright and attribution](http://grantnav.threesixtygiving.org/datasets/#copyright) list for details on the original data sources.
 
 ## Install R and RStudio
