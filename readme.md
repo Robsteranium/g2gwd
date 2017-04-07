@@ -4,6 +4,8 @@
 
 ODM workshop on exploring and visualising data using examples from [GrantNav](http://grantnav.threesixtygiving.org/), a [360Giving](http://www.threesixtygiving.org/) application released under the terms of the [Creative Commons Attribution Sharealike License (CC-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/). See GrantNav's [copyright and attribution](http://grantnav.threesixtygiving.org/datasets/#copyright) list for details on the original data sources.
 
+The code provided here is also made available under a CC-BY-SA license.
+
 ## Install R and RStudio
 
 Install [R](https://cran.r-project.org/) and the [RStudio graphical user interface](https://www.rstudio.com/products/rstudio/download/) then start RStudio.
